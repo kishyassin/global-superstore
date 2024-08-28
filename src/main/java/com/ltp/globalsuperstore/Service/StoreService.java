@@ -4,12 +4,18 @@ import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.ltp.globalsuperstore.Constants;
 import com.ltp.globalsuperstore.Item;
 import com.ltp.globalsuperstore.repository.StoreRepository;
 
+@Service
 public class StoreService {
-    StoreRepository storeRepository = new StoreRepository();
+    
+    @Autowired
+    StoreRepository storeRepository;
 
     
     public int getIndexFromId(String id) {
